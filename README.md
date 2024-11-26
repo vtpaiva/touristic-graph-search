@@ -8,7 +8,7 @@ The addressed problem was a variation of the traveling salesman problem, where, 
 (The code was written in Portuguese.)
 
 <div align = "center">
-        <img src="img/Graph.png" 
+        <img src="assets/Graph.png" 
                 alt="Picture" 
                 width="auto" 
                 height="400" 
