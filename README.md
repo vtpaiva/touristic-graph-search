@@ -112,3 +112,25 @@ The time complexity of the A* algorithm is influenced by several factors:
 *   **Graph Size:** The number of nodes and edges in the graph affects the number of iterations the algorithm needs to perform.
 *   **Heuristic Calculation:** Each node expansion requires the calculation of the heuristic, which can be costly depending on the graph's complexity.
 *   **Pathfinding in Reduced Graph:** When reducing the graph, the time complexity increases as the number of shortest path calculations grows. For each pair of touristic points, A* is run, which can be computationally expensive in large graphs.
+
+### Conclusion
+
+The algorithms implemented in this project offer efficient ways to explore and find optimal paths in a graph. We explored two types of graph search algorithms: a blind search algorithm and an informed search algorithm using A*.
+
+1. **Blind Search Algorithm (Recursive Blind Search)**: This algorithm performs a brute-force traversal of the graph. It recursively explores all possible paths, ensuring that all the touristic points are visited while adhering to the time limit. While this algorithm guarantees the discovery of all possible solutions, it may not always be efficient due to its exhaustive nature, especially when the graph size increases.
+
+2. **A* Algorithm with Heuristic Search**: The A* algorithm combines the power of greedy search and Dijkstra’s algorithm by utilizing a heuristic function to estimate the cost of reaching the goal. In our case, we used the Euclidean distance as the heuristic to find the shortest path between nodes. This method is significantly more efficient than blind search, as it directs the search toward the goal more intelligently by focusing on promising paths.
+
+3. **Graph Reduction for Touristic Points**: To optimize the search for the best route, we reduced the graph to only include the starting point and touristic points. This reduction simplifies the problem and allows for quicker pathfinding, especially when using the A* algorithm. By focusing only on the critical points, the complexity of the search space is greatly reduced.
+
+4. **Maximizing Visited Points**: The `maxPointsPath` function attempts to visit as many points of interest as possible within the given time limit, providing a balance between efficiency and coverage. It ensures that the solution is not just optimal in terms of time but also maximizes the number of visited points.
+
+### Performance Considerations
+
+- The **A* search** with heuristic significantly outperforms the blind search, especially in larger graphs with many nodes and edges. The time complexity of A* is generally more efficient due to its heuristic guidance.
+- The **blind search** approach, while exhaustive, may be impractical for larger graphs due to its potential exponential growth in the number of paths to explore.
+
+### Future Improvements
+
+- For larger datasets, further optimizations can be made to improve both the blind search and A* algorithm, such as pruning unpromising paths or using more advanced heuristics.
+- Additional features, such as incorporating dynamic updates or real-time data, could also be implemented to make the solution more adaptable to changing conditions.
